@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Paulo</title>
+</head>
+
+<style>
+    body {
+        /* border: solid 1px red; */
+        text-align: center;
+    }
+
+    #imagem {
+        width: 300px;
+        clip: rect(0px, 300px, 200px, 0px);
+        border-radius: 10px;
+    }
+
+    #btnMais,
+    #btnMenos {
+        text-align: center;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        color: azure;
+        border: none;
+    }
+
+    #btnMais {
+        background-color: rgb(0, 143, 95);
+
+    }
+
+    #btnMenos {
+        background-color: rgb(255, 0, 0);
+
+    }
+
+    #qtd {
+        font-size: 2em;
+
+        margin: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <img id="imagem" src="16-hamburguer-1024x683.jpeg" alt="imagem">
+    </div>
+    <div id="titulo">
+
+    </div>
+    <div id="buttons">
+        <button id='btnMais' onclick="operacao('+')">+</button>
+        <span id='qtd'>0</span>
+        <button id='btnMenos' onclick="operacao()">-</button>
+    </div>
+
+
+
+    <script>
+
+        let getNumber = document.querySelector('#qtd').textContent;
+
+        function operacao(operador) {
+            operador == '+' ? getNumber++ : getNumber--;
+            getNumber <0 ? getNumber = 0 : getNumber;
+
+            document.querySelector('#qtd').textContent = getNumber;
+
+        }
+
+    </script>
+</body>
+
+</html>
